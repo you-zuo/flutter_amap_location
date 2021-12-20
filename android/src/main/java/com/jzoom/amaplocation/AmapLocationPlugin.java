@@ -221,7 +221,8 @@ public class AmapLocationPlugin implements MethodCallHandler, AMapLocationListen
 
     private boolean startup(Map arguments) {
         synchronized (this){
-
+            AMapLocationClient.updatePrivacyShow(getApplicationContext(),true,true)
+            AMapLocationClient.updatePrivacyAgtee(getApplicationContext(),true)
             if(locationClient==null){
                 //初始化client
                 locationClient = new AMapLocationClient(getApplicationContext());
